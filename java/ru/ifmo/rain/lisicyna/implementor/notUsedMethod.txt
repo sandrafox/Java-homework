@@ -1,0 +1,35 @@
+private String writeFields(Class<?> token) throws ImplerException {
+        StringBuilder result = new StringBuilder("");
+        for (Field f : token.getFields()) {
+            result.append(f.getType().getName() + " " + f.getName() + ";\n");
+        }
+        return new String(result);
+    }
+
+ private String writeConstructors(Class<?> token) {
+         StringBuilder result = new StringBuilder("");
+         for (Constructor c : token.getConstructors()) {
+             int modifires = c.getModifiers();
+             if (Modifier.isPrivate(modifires)) {
+                 result.append("private ");
+             }
+             if (Modifier.isProtected(modifires)) {
+                 result.append("protected ");
+             }
+             if (Modifier.isPublic(modifires)) {
+                 result.append("public ");
+             }
+             if (Modifier.isFinal(modifires)) {
+                 result.append("final ");
+             }
+             result.append(token.getSimpleName() + " (");
+             Class t[] = c.getParameterTypes();
+             for (int i = 0; i < t.length - 1; i++) {
+                 result.append(t[i].getSimpleName() + " a" + i + ", ");
+             }
+             if (t.length > 0) {
+                 result.append(t[t.length - 1].getSimpleName() + " a" + (t.length - 1) + ") { };\n");
+             }
+         }
+         return new String(result);
+     }
