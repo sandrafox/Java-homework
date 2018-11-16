@@ -20,7 +20,7 @@ public class HelloUDPClient implements HelloClient {
             this.prefix = prefix + number + "_";
             this.requests = requests;
             this.port = port;
-                addr = new InetSocketAddress(host, port);
+            addr = new InetSocketAddress(host, port);
         }
 
         @Override

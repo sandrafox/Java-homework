@@ -1,0 +1,1 @@
+"C:\Program Files\Java\jdk1.8.0_151\bin\javadoc.exe" -cp java\;lib\*;artifacts\JarImplementorTest.jar; -private -author ru.ifmo.rain.lisicyna.implementor java\info\kgeorgiy\java\advanced\implementor\Impler.java java\info\kgeorgiy\java\advanced\implementor\JarImpler.java java\info\kgeorgiy\java\advanced\implementor\ImplerException.java
